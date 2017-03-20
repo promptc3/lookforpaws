@@ -69,6 +69,6 @@ class PawsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def paw_params
-      params.fetch(:paw, {})
+      params.require(:paw).permit(:avatar)
     end
 end
