@@ -25,7 +25,7 @@ class PawsController < ApplicationController
   # POST /paws.json
   def create
     @paw = Paw.new(paw_params)
-
+    
     respond_to do |format|
       if @paw.save
         format.html { redirect_to @paw, notice: 'Paw was successfully created.' }
@@ -69,6 +69,6 @@ class PawsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def paw_params
-      params.require(:paw).permit(:avatar)
+       params.require(:paw).permit(:avatar) if params[:avatar]
     end
 end
