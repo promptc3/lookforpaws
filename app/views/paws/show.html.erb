@@ -6,10 +6,10 @@
      	<%= image_tag @paw.avatar.url(:medium),class: 'figure-img img-fluid rounded' %>
      	</div>
      	<div class="col-sm-6">
-     	<div class="ipsum"><%= @paw.about.name %> sit amet, consectetur adipisicing elit. Maiores iureuaerat, autem distinctio voluptas natus ducimus, velit explicabo quasi consectetur  doloremque qui dolores, quidem iusto. Aspernatur labore, eveniet. Voluptatem, velit.</div>
-     	  </div>	
-     	</div>
-     	<div class="justify-content-center", style="padding: 20px">
+                      
+     	<p><h3 class="display-4"><%= @paw.name %></h3> born on <%= @paw.dob %>, is a <%= @paw.gender %>  <%= @paw.breed %>
+                 	</div>
+                     	<div class="justify-content-center", style="padding: 20px">
           <%= link_to 'Edit', edit_paw_path(@paw), class: 'btn btn-primary' %> 
 		  <%= link_to 'Back', paws_path, class: 'btn btn-primary' %>
 	    </div>
