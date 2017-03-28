@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170323100846) do
+ActiveRecord::Schema.define(version: 20170328090832) do
 
   create_table "paws", force: :cascade do |t|
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20170323100846) do
     t.string   "breed"
     t.datetime "dob"
     t.datetime "dod"
+    t.integer  "love",                default: 1
   end
 
 end
