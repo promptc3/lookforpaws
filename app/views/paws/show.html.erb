@@ -6,9 +6,16 @@
      	<%= image_tag @paw.avatar.url(:medium),class: 'figure-img img-fluid rounded' %>
      	</div>
      	<div class="col-sm-6">
-                      
-     	<p><h3 class="display-4"><%= @paw.name %></h3> born on <%= @paw.dob %>, is a <%= @paw.gender %>  <%= @paw.breed %>
-                 	</div>
+          <div class="btn-group" role="group">
+            <%= link_to "Love",paws_love_url,method: :put,remote: true,class: "btn btn-secondary btn-danger"%>
+                    <div class="btn btn-secondary btn-danger">
+                        <div id="love-me"><%= @paw.love %></div>
+                    </div>
+         </div>
+
+
+         <p><h3 class="display-4"><%= @paw.name %></h3> born on <%= @paw.dob %>, is a <%= @paw.gender %>  <%= @paw.breed %>
+        </div>
                      	<div class="justify-content-center", style="padding: 20px">
           <%= link_to 'Edit', edit_paw_path(@paw), class: 'btn btn-primary' %> 
 		  <%= link_to 'Back', paws_path, class: 'btn btn-primary' %>
@@ -16,6 +23,4 @@
      </div>
 
 
-<div class="container">
-    
-</div>
+
