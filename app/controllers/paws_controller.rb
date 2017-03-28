@@ -40,10 +40,12 @@ class PawsController < ApplicationController
   # PATCH/PUT /paws/1
   # PATCH/PUT /paws/1.json
   def update
-    respond_to do |format|
+     
+     respond_to do |format|
       if @paw.update(paw_params)
         format.html { redirect_to @paw, notice: 'Paw was successfully updated.' }
         format.json { render :show, status: :ok, location: @paw }
+        
       else
         format.html { render :edit }
         format.json { render json: @paw.errors, status: :unprocessable_entity }
@@ -60,6 +62,17 @@ class PawsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+ def love
+    @paw = Paw.find_by(params[:id])
+    @paw.love += 1
+    respond_to do |format|
+     if @paw.save 
+      format.html {redirect_to @paw}
+      format.js
+     end
+   end
+ end
 
   private
     # Use callbacks to share common setup or constraints between actions.
