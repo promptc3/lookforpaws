@@ -1,0 +1,17 @@
+<%= form_for @story do |f| %>
+ 
+    
+      <form>
+        <div class="form-group">
+          <div class="col-14">
+          <%= f.text_area :body,class: ' form-control form-control-lg',placeholder: 'your moments with paws' %>
+          </div>  
+        </div>
+         <%= f.hidden_field :paw_id, :value => current_paw %>
+            
+        
+          <%= f.submit "Submit", class: 'btn btn-primary'%>
+        
+      </form>
+ 
+<% end %>

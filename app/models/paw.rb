@@ -7,6 +7,6 @@ class Paw < ApplicationRecord
     validates_with AttachmentSizeValidator, :attributes => :avatar, less_than: 1.megabytes
     validates_attachment :avatar, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
     validates_attachment_file_name :avatar, :matches => [/png\Z/, /jpe?g\Z/, /gif\Z/]
-    #add affection
-   
+    #asscoiations
+    has_many :stories
 end

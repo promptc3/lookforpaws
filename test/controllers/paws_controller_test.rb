@@ -16,8 +16,9 @@ class PawsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create paw" do
+    assert @paw.save
     assert_difference('Paw.count') do
-      post paws_url, params: { paw: {  } }
+      post paws_url, params: { paw: { } }
     end
 
     assert_redirected_to paw_url(Paw.last)
