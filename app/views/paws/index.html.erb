@@ -1,23 +1,20 @@
-<p id="notice"><%= notice %></p>
+<p id="notice text-warning"><%= notice %></p>
 
 <div class="container", style="padding-top: 70px">
-<div class="row justify-content-center">
+ <div class="row justify-content-center">
   <blockquote class="blockquote blockquote-reverse">
       <p class="mb-0">“You think dogs will not be in heaven? I tell you, they will be there long before any of us.”</p>
       <footer class="blockquote-footer">Robert Louis Stevenson</footer>
   </blockquote>
+ </div>
 </div>
-  <table>
-    <tbody>
-      <% @paws.each do |paw| %>
-        <tr>
-          <td><%= image_tag paw.avatar.url(:thumb),class: 'rounded-circle' %></td>
-          <td><%= link_to 'Show', paw %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-
-
-
+ <% @paws.each do |paw| %>
+<div class="card-deck">
+  <div class="card">
+     <%= image_tag paw.avatar.url(:thumb),class: 'card-img-top' %>
+      <div class="card-block">
+      <h4 class="card-title"><%= paw.name %></h4>
+      <p class="card-text text-muted"><%= paw.breed%></p>
+    </div>
+  </div>
+ <% end %>
