@@ -1,11 +1,6 @@
 module StoriesHelper
-	def story(paw_id)
-      if @story.paw.id == paw_id
-      	@story.body
-      else
-      	respond_to do |format|
-      		format.html{ redirect_to @story,notice: "No Stories Found" }
-      	end
-      end
-  end
+	def shorten(story_id)
+		@body = Story.find(story_id)
+		@body.body[0..50] << ".........."
+	end
 end
