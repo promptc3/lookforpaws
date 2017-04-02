@@ -1,0 +1,12 @@
+<div class="container" style="padding-top: 70px"><% @stories.each do |story| %>
+	
+	       <li class="list-group-item">
+	         <div class="card-text text-muted" style="margin-right: 5rem"><%= shorten(story.id) %>
+	          </div>
+	         <%= link_to 'Show', story,class: 'card-link'%>
+	         <%= link_to 'Edit', edit_story_path(story),class: 'card-link' %>
+	         <%= link_to 'Not a true story', story, method: :delete, data: { confirm: 'Are you sure?' } ,class: 'card-link'%>
+	       </li>
+	       
+	       
+	<% end %></div>
