@@ -3,8 +3,8 @@ class Paw < ApplicationRecord
 	validates :name, presence: true
     #paperclip validations
 	has_attached_file :avatar, styles: { medium: "600x600>", thumb: "100x100>",large: '1000x1000>' },
-	                  :storage => :s3
-	                  :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
+	                  :storage => :s3,
+	                  :s3_credentials => Proc.new{|a| a.instance.s3_credentials },
                       :s3_permissions => :private
     validates_with AttachmentPresenceValidator, :attributes => :avatar
     validates_with AttachmentSizeValidator, :attributes => :avatar, less_than: 1.megabytes
@@ -14,8 +14,6 @@ class Paw < ApplicationRecord
     has_many :stories
     ##
     def s3_credentials
-    {:bucket => "pawsome", :access_key_id => "AKIAID5FLVIVE7OQ3R2A
-", :secret_access_key => "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
-"}
-  end
+      {:bucket => "pawsome", :access_key_id => "AKIAID5FLVIVE7OQ3R2A", :secret_access_key => "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"}
+    end
 end
