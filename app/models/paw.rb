@@ -5,7 +5,11 @@ class Paw < ApplicationRecord
 	has_attached_file :avatar, styles: { medium: "600x600>", thumb: "100x100>",large: '1000x1000>' },
 	                  :storage => :s3,
 	                  :s3_credentials => Proc.new{|a| a.instance.s3_credentials },
-                      :s3_permissions => :private
+                      :s3_permissions => :private,
+                      :s3_region => "ap-south-1",
+                      :s3_host_name => "s3-ap-south-1.amazonaws.com",
+                      :url => "s3_domain_url"
+            
     validates_with AttachmentPresenceValidator, :attributes => :avatar
     validates_with AttachmentSizeValidator, :attributes => :avatar, less_than: 1.megabytes
     validates_attachment :avatar, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
