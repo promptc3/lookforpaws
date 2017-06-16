@@ -14,7 +14,7 @@
 				<% @paws.each do |paw| %>
 					<div class="card">
 	        <%= image_tag paw.avatar.url(:medium) %>
-				<p class="card-text"><%= paw.name.capitalize %> is a cute <%= paw.breed %></p>
+					<a href="/paws/<%= paw.id%>" class="card-text"><%= paw.name.capitalize %> is a cute <%= paw.breed %></a>
 			</div>
 		<% end %>
 		</div>
