@@ -10,7 +10,7 @@ class PawsController < ApplicationController
   # GET /paws/1
   # GET /paws/1.json
   def show
-    @paw = Paw.find_by(params[:id])
+    @paw = Paw.find(params[:id])
     @story = Story.new(:paw => @paw)
   end
 
