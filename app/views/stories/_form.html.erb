@@ -1,12 +1,13 @@
 <%= form_for @story do |f| %>
  
     
-         <%= f.text_area :body,id: "froala-editor" %>
+         <%= f.text_area :body, id: "froala-editor" %>
        
          <%= f.hidden_field :paw_id, :value => current_paw %>
-            
-        
-         <div style="padding-top: 15px"><%= f.submit "Submit", class: 'btn btn-primary'%></div>
+ 
+         <div style="padding-top: 15px">
+         <%= f.submit "Submit", class: 'btn btn-primary'%>
+         </div>
         
 
 <% end %>

@@ -1,8 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  body: MyText
-  paw: one
+  body: "Hey Buddy You Should be present there"
+  paw: 1
 
 two:
   body: MyText

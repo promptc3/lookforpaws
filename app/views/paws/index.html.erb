@@ -1,20 +1,23 @@
 <p id="notice text-warning"><%= notice %></p>
-
-<div class="container", style="padding-top: 70px">
- <div class="row justify-content-center">
-  <blockquote class="blockquote blockquote-reverse">
-      <p class="mb-0">“You think dogs will not be in heaven? I tell you, they will be there long before any of us.”</p>
-      <footer class="blockquote-footer">Robert Louis Stevenson</footer>
-  </blockquote>
- </div>
+<section class="jumbotron text-center"
+	<div class="container", style="background-color: #EEE9E9">
+		<h1 class="jumbotron-heading text-danger">hug me please...</h1>
+		<p class="lead text-muted">Dogs belong to heaven way before we do.</p>
+		<p>
+			<a href="/paws/new" class="btn btn-primary">Upload your cutie</a>
+			<a href="/stories" class="btn btn-secondary">Read heart warming stories</a>
+	</div>
+</section>
+<div class="album text-muted">
+	<div class="container">
+		<div class="row">
+				<% @paws.each do |paw| %>
+					<div class="card">
+	        <%= image_tag paw.avatar.url(:medium) %>
+				<p class="card-text"><%= paw.name.capitalize %> is a cute <%= paw.breed %></p>
+			</div>
+		<% end %>
+		</div>
+	</div>
 </div>
- <% @paws.each do |paw| %>
-<div class="card-deck">
-  <div class="card">
-     <%= image_tag paw.avatar.url(:thumb),class: 'card-img-top' %>
-      <div class="card-block">
-      <h4 class="card-title"><%= paw.name %></h4>
-      <p class="card-text text-muted"><%= paw.breed%></p>
-    </div>
-  </div>
- <% end %>
+

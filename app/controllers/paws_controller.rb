@@ -12,7 +12,6 @@ class PawsController < ApplicationController
   def show
     @paw = Paw.find_by(params[:id])
     @story = Story.new(:paw => @paw)
-   
   end
 
   # GET /paws/new
